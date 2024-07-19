@@ -1,0 +1,126 @@
+.links{
+    background-color: var(--btn-green);
+    color: var(--incredible-white);
+    
+    &__container{
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding-top: 175px;
+        padding-bottom: 80px;
+
+        @include small-desktop{
+            padding-top: 50px;
+            gap: 40px;
+        }
+    }
+
+    &__article{
+        width: 280px;
+
+        @include mobile{
+            width: 100%;
+        }
+
+        h5{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            margin: 0;
+            margin-bottom: 20px;
+            color: var(--background-gray);
+        }
+
+        p, li, a{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+        }
+
+        p{
+            line-height: 18px;
+        }
+
+        a:hover{
+            color: var(--txt-yellow);
+            cursor: url(../img/section.photo/pointer.png), pointer;
+        }
+        
+        .contacts{
+            a{
+                text-decoration: underline;
+            }
+            
+            &__text{
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 24px;
+                margin-bottom: 32px;
+            }
+
+            &__link{
+                font-weight: 600;
+                
+            }
+
+            &__icons{
+                display: flex;
+                flex-flow: row nowrap;
+                gap:16px;
+                img{
+                    height: 32px;
+                    width: 32px;
+                }
+            }
+        }
+
+        ul{
+            padding-left: 0px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+
+            li{
+                background: url(../img/footer/white-arrow.svg) no-repeat 2px 4px;
+                padding-left: 20px;
+                color: var(--txt-white);
+
+                .new{
+                    vertical-align: middle;
+                    margin-left: 16px;
+                }
+            }
+            li:hover{
+                background: url(../img/footer/yellow-arrow.svg) no-repeat 2px 4px;
+                color: var(--txt-yellow);
+                cursor: url(../img/section.photo/pointer.png), pointer;
+
+                a:hover{
+                    cursor: url(../img/section.photo/pointer.png), pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .mr50{
+        width: 380px;
+    }
+
+    .wide{
+        height: 265px;
+        width: 480px;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include small-desktop{
+            padding-right: 24px;
+            height: 231px;
+        }
+    }
+}

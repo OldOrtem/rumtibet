@@ -1,0 +1,28 @@
+.copywrite{
+    background-color: var(--txt-black);
+    color: var(--incredible-white);
+    
+    &__article{
+        padding: 24px 0px;
+        align-items: center;
+        justify-content: space-between;
+        
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        text-align: left;
+        
+        @include small-desktop{
+            padding: 24px 16px;
+        }
+
+        @include mobile{
+            flex-direction: column;
+            padding: 20px 0px;
+        }
+
+        a{
+            text-decoration:underline;
+        }
+    }
+}

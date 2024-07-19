@@ -1,0 +1,105 @@
+.photo{
+    &__article{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding-bottom: 200px;
+        padding-right: 0;
+        padding-left: 0;
+
+        @include small-desktop{
+            padding-bottom: 50px;
+        }
+
+        @include mobile{
+            gap: 32px;
+            align-items: flex-start;
+        }
+    }
+
+    &__header{
+        text-align: center;
+        @include small-desktop{
+            text-align: left;
+            align-self: start;
+            padding-left: 16px;
+            //padding-right: 16px;
+        }
+    }
+
+    .karusel{
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: scroll;
+        @include small-desktop{
+            
+        }
+    }
+
+    .karusel::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    &__body{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 20px;
+        padding-bottom: 10px;
+        
+        @include small-desktop{
+            width: 1300px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        @include mobile{
+            flex-flow: row nowrap;
+            width: auto;
+        }
+        
+        @for $i from 1 through 6 {
+            .photo-#{$i} {
+                background-image: url(../img/section.photo/#{$i}.jpg);
+            }
+        }
+
+        .photo{
+            min-height: 250px;
+            min-width: 280px;
+            max-height: 250px;
+            max-width: 280px;
+            border-radius: 6px;
+            background-size: cover;
+            background-position: 50%;
+
+            .bc{
+                display: none;
+            }
+        }
+
+        .photo:hover {
+            cursor: url(../img/section.photo/pointer.png), pointer;
+            
+            .bc{
+                display: block;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--invisible-green);
+            }
+        }
+
+        .wide{
+            min-width: 580px;
+            max-width: 580px;
+
+            @include mobile{
+                min-width: 280px;
+                max-width: 280px;
+            }
+        }
+    }
+}

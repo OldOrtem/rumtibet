@@ -1,0 +1,219 @@
+.cost{
+    &__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include small-desktop{
+            align-items: flex-start;
+            align-self: start;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+    }
+    
+    &__article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding-top: 80px;
+        
+        @include small-desktop{
+            padding-right: 0;
+            padding-left: 0;
+            gap: 32px;
+            padding-top: 50px;
+        }
+        
+        .deck::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        .deck{
+            display: flex;
+            gap: 20px;
+            flex-flow: row nowrap;
+            width: 100%;
+            overflow-x: scroll;
+
+            @include small-desktop{
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+            
+            .card{
+                color: var(--txt-white);
+                background-size: cover;
+                background-position: 50%;
+                min-height: 500px;
+                min-width: 380px;
+                max-height: 500px;
+                max-width: 380px;
+                border-radius: 32px;
+                overflow: hidden;
+                position: relative;
+                
+
+                @include mobile{
+                    min-height: 400px;
+                    min-width: 285px;
+                    max-height: 400px;
+                    max-width: 285px;
+                }
+                
+                &__checkbox{
+                    position: absolute;
+                    width: 0px;
+                }
+
+                &__checkbox-lable{
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 100;
+                    cursor: url(../img/section.photo/pointer.png), pointer;
+                }
+
+                &__rate{
+                    position: absolute;
+                    right: 0px;
+                    top: 50px;
+                    transition: .3s;
+                    opacity: 1;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: var(--stars-misty-white);
+                    border-radius: 4px 0 0 4px;
+                    padding: 4px 8px;
+
+                    .star{
+                        height: 24px;
+                        width: 24px;
+                    }
+
+                    .rate{
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 18px;
+                        text-align: left;
+                        color: var(--btn-green);
+                    }
+                }
+
+                &__description{
+                    height: 100%;
+                    background-color: var(--card-header-transparent);
+                    // backdrop-filter: blur(3px);
+                    transform: translateY(calc(100% - 90px));
+                    transition: .3s;
+                    padding: 20px 30px 20px 30px;
+                    @include mobile{
+                        padding: 24px;
+                        transform: translateY(calc(100% - 70px));
+                    }
+                }
+
+                &__header{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items:center;
+                }
+
+                &__title{
+                    display: flex;
+                    flex-direction: column;
+
+                    h3{
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 28.8px;
+                        text-align: left;  
+                        margin: 0;        
+                        
+                        @include mobile {
+                            font-size: 18px;
+                            line-height: 21.6px;
+                        }
+                    }
+
+                    h6{
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        text-align: left;     
+                        margin: 0;
+                        @include mobile {
+                            display: none;
+                        }
+                    }
+                }
+
+                &__price{
+                    background-color: var(--stars-misty-white);
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    text-align: left;
+
+                    @include mobile{
+                        padding: 6px 12px;
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
+                }
+
+                &__body{
+                    margin-top: 35px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    height: 80%;
+
+                    p{
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        text-align: left;
+
+                        @include mobile{
+                            font-size: 12px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+
+                &__link{
+                    padding: 12px 24px;
+                }
+            }
+
+            .card__checkbox:checked ~ .card__description{
+                transform: translateY(0);
+                padding-top: 30px;
+            }
+
+            .card__checkbox:checked ~ .card__rate{
+                opacity: 0;
+            }
+
+            .lake{
+                background-image: url(../img/section.cost/lake.jpg);
+            }
+
+            .night{
+                background-image: url(../img/section.cost/night.jpg);
+            }
+
+            .yoga{
+                background-image: url(../img/section.cost/yoga.jpg);
+            }
+        }
+    }
+}

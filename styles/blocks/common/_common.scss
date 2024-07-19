@@ -1,0 +1,84 @@
+.button{
+    background-color: var(--btn-green);
+    padding: 16px 36px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+    border: solid 1px var(--btn-green);
+    color: var(--txt-white);
+    display: inline-block;
+    cursor: url(../img/section.photo/pointer.png), pointer;
+
+    @include mobile{
+        padding: 12px 24px;
+        align-self: center;
+    }
+}
+
+.button:active{
+    background-color: var(--txt-white);
+    color: var(--btn-green);
+    cursor: url(../img/section.blog/pointer.svg), pointer;
+}
+
+.container{
+    display: flex;
+    max-width: 1180px;
+    margin: auto;
+    padding: 100px 0;
+
+    @include small-desktop{
+        padding: 100px 16px;
+    }
+
+    @include mobile{
+        padding: 50px 16px;
+    }
+}
+
+.yellow-header{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: var(--txt-yellow);
+    margin: 0;
+    margin-bottom: 8px;
+
+    @include small-desktop{
+        font-size: 16px;
+    }
+}
+
+.second-header{
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 38.4px;
+    color: var(--txt-black);
+    margin: 0;
+
+    @include mobile{
+        font-size: 24px;
+        line-height: 28.8px;
+    }
+    
+}
+
+.paragraph{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--txt-black);
+    padding: 0px 0px;
+    margin: 24px 0;
+
+    @include mobile{
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+section.light:nth-child(2n+1){
+    background-color: var(--background-gray);
+}
